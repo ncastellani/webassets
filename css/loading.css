@@ -1,0 +1,117 @@
+
+body {
+    --loading-progressbar-radius: 8px;
+}
+
+
+.loading {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 5000;
+	top: 0;
+	left: 0;
+	float: left;
+	text-align: center;
+
+    background-color: var(--loading-overlay-background);
+
+    animation: fadeIn ease 1.5s;
+    -webkit-animation: fadeIn ease 1.5s;
+    -moz-animation: fadeIn ease 1.5s;
+    -o-animation: fadeIn ease 1.5s;
+    -ms-animation: fadeIn ease 1.5s;
+}
+.loading-fade-out {
+    animation: fadeOut ease 600ms;
+    -webkit-animation: fadeOut ease 600ms;
+    -moz-animation: fadeOut ease 600ms;
+    -o-animation: fadeOut ease 600ms;
+    -ms-animation: fadeOut ease 600ms;
+}
+
+.loading > .centered {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.loading > .extra {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    margin-bottom: 16px;
+    font-size: 13px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+.loading > .extra > a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color-alt) !important;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 12px;
+
+    -webkit-transition: color 200ms linear;
+    -ms-transition: color 200ms linear;
+    transition: color 200ms linear;
+}
+.loading > .extra > a:hover {
+    color: var(--color-primary) !important;
+}
+
+.loading .logo {
+    height: 45px;
+}
+.loading .logo > img {
+    height: 35px;
+    margin: auto;
+}
+
+.loading .description {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    color: var(--text-color-alt);
+    font-size: 15px;
+}
+
+.loading .progressbar {
+    width: 300px;
+    height: 8px;
+    margin: auto;
+
+    border-radius: var(--loading-progressbar-radius);
+    background-color: var(--border-color);
+}
+.loading .progressbar > div {
+    width: 0%;
+    height: 100%;
+
+    border-radius: var(--loading-progressbar-radius);
+
+    -webkit-transition: width 300ms linear;
+    -ms-transition: width 300ms linear;
+    transition: width 300ms linear;
+}
+
+.loading .updates {
+    height: 80px;
+    margin-top: 20px;
+}
+.loading .updates > span {
+    color: var(--text-color-alt);
+    display: block;
+    margin-top: 3px;
+}
+.loading .updates > span:first-of-type {
+    color: var(--text-color) !important;
+}

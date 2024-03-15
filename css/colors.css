@@ -7,6 +7,9 @@ body.light-theme {
 
     --background-color: #ffffff;
     --background-color-alt: #eeeeee;
+
+    /* loading.css */
+    --loading-overlay-background: #ffffff;
 }
 
 body {
