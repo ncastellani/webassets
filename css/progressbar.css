@@ -1,0 +1,12 @@
+
+/* progress bar types */
+.progressbar-primary {
+    background-color: var(--color-primary);
+}
+.progressbar-error {
+    background-color: var(--color-danger);
+}
+.progressbar-infinite {
+    width: 25%;
+    animation: borealisBar 2s linear infinite;
+}
