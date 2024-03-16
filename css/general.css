@@ -15,6 +15,19 @@ body {
 	transition: opacity 200ms linear;
 }
 
+.layout {
+	display: none;
+
+	-webkit-transition: opacity 300ms linear;
+	-ms-transition: opacity 200ms linear;
+	transition: opacity 200ms linear;
+}
+
+.pointer-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
 
 /* scrollbar */
 ::-webkit-scrollbar {
