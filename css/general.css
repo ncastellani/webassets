@@ -15,6 +15,7 @@ body {
 	transition: opacity 200ms linear;
 }
 
+
 /* scrollbar */
 ::-webkit-scrollbar {
     border-radius: 6px;
@@ -37,4 +38,41 @@ body {
 .no-scrollbar::-webkit-scrollbar {
     display: none !important;
     width: 0;
+}
+
+
+/* clearfix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table
+}
+
+
+/* fixed item */
+.fixed {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: auto
+}
+
+
+/* container */
+.container {
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container { width: 80%; }
+}
+@media (min-width: 1280px) {
+    .container { width: 72%; }
+}
+@media (min-width: 1920px) {
+    .container { width: 64%; }
 }
