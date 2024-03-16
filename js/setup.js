@@ -24,19 +24,19 @@ function initSetup() {
 // !!
 function updateColorPreferences(cb) {
 
-    let desiredMode = 'light-mode';
+    let desiredMode = 'light-theme';
 
     // get the browser preference
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        desiredMode = 'light-mode';
+        desiredMode = 'light-theme';
     } else {
-        desiredMode = 'light-mode';
+        desiredMode = 'light-theme';
     }
 
     // !! get the user defined preference
 
     // update the body element with the colors class
-    console.info(`GlobalSetup: setting "${desiredMode}" as the application color`);
+    console.info(`GlobalSetup: setting a new application color [desiredMode: ${desiredMode}]`);
     document.getElementById('body').classList.add(desiredMode);
 
     cb();
