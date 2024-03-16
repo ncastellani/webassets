@@ -3,6 +3,7 @@
 .row {
     position: relative;
     width: 100%;
+    margin: -2%;
 }
 .row::after {
     content: "";
