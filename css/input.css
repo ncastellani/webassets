@@ -1,0 +1,249 @@
+
+/* input helper */
+.input-helper {
+    display: block;
+    margin-bottom: 16px;
+
+    color: var(--text-color-alt);
+    font-size: 15px;
+}
+.input-helper-danger {
+    color: var(--color-danger);
+}
+
+
+/* input label */
+.labeled-input {
+    --pure-material-safari-helper1: var(--color-primary);
+    position: relative;
+    display: inline-block;
+    padding-top: 6px;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    overflow: hidden;
+    font-weight: 400 !important;
+    font-size: 15px;
+    width: 100%;
+}
+
+
+/* input/textarea */
+.labeled-input > input,
+.labeled-input > select,
+.labeled-input > textarea {
+    box-sizing: border-box;
+    margin: 0;
+    border: solid 1px; /* Safari */
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    border-top-color: transparent;
+    border-radius: 6px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 13px;
+    padding-right: 13px;
+    width: 100%;
+    height: inherit;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    background-color: transparent;
+    box-shadow: none; /* Firefox */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    caret-color: var(--color-primary);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+
+/* span */
+.labeled-input > input + span,
+.labeled-input > select + span,
+.labeled-input > textarea + span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    width: 100%;
+    max-height: 100%;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    font-size: 90%;
+    line-height: 10px;
+    cursor: text;
+    transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+
+/* corners */
+.labeled-input > input + span::before,
+.labeled-input > input + span::after,
+.labeled-input > select + span::before,
+.labeled-input > select + span::after,
+.labeled-input > textarea + span::before,
+.labeled-input > textarea + span::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    margin-top: 6px;
+    border-top: solid 1px;
+    border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+    min-width: 10px;
+    height: 8px;
+    pointer-events: none;
+    box-shadow: inset 0 1px transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.labeled-input > input + span::before,
+.labeled-input > select + span::before,
+.labeled-input > textarea + span::before {
+    margin-right: 4px;
+    border-left: solid 1px transparent;
+    border-radius: 6px 0;
+}
+
+.labeled-input > input + span::after,
+.labeled-input > select + span::after,
+.labeled-input > textarea + span::after {
+    flex-grow: 1;
+    margin-left: 4px;
+    border-right: solid 1px transparent;
+    border-radius: 0 6px;
+}
+
+
+/* hover */
+.labeled-input:hover > input,
+.labeled-input:hover > select,
+.labeled-input:hover > textarea {
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+    border-top-color: transparent;
+}
+
+.labeled-input:hover > input + span::before,
+.labeled-input:hover > input + span::after,
+.labeled-input:hover > select + span::before,
+.labeled-input:hover > select + span::after,
+.labeled-input:hover > textarea + span::before,
+.labeled-input:hover > textarea + span::after {
+    border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+}
+
+.labeled-input:hover > input:not(:focus):placeholder-shown,
+.labeled-input:hover > select:not(:focus):placeholder-shown,
+.labeled-input:hover > textarea:not(:focus):placeholder-shown {
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+}
+
+
+/* placeholder-shown */
+.labeled-input > input:not(:focus):placeholder-shown,
+.labeled-input > select:not(:focus):placeholder-shown,
+.labeled-input > textarea:not(:focus):placeholder-shown {
+    border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+}
+
+.labeled-input > input:not(:focus):placeholder-shown + span,
+.labeled-input > select:not(:focus):placeholder-shown + span,
+.labeled-input > textarea:not(:focus):placeholder-shown + span {
+    font-size: inherit;
+    line-height: 55px;
+}
+
+.labeled-input > input:not(:focus):placeholder-shown + span::before,
+.labeled-input > input:not(:focus):placeholder-shown + span::after,
+.labeled-input > select:not(:focus):placeholder-shown + span::before,
+.labeled-input > select:not(:focus):placeholder-shown + span::after,
+.labeled-input > textarea:not(:focus):placeholder-shown + span::before,
+.labeled-input > textarea:not(:focus):placeholder-shown + span::after {
+    border-top-color: transparent !important;
+}
+
+
+/* focus */
+.labeled-input > input:focus,
+.labeled-input > select:focus,
+.labeled-input > textarea:focus {
+    border-color: var(--color-primary);
+    border-top-color: transparent;
+    box-shadow: inset 1px 0 var(--pure-material-safari-helper1), inset -1px 0 var(--pure-material-safari-helper1), inset 0 -1px var(--pure-material-safari-helper1);
+    outline: none;
+}
+
+.labeled-input > input:focus + span,
+.labeled-input > select:focus + span,
+.labeled-input > textarea:focus + span {
+    color: var(--color-primary);
+    font-weight: 600 !important;
+}
+
+.labeled-input > input:focus + span::before,
+.labeled-input > input:focus + span::after,
+.labeled-input > select:focus + span::before,
+.labeled-input > select:focus + span::after,
+.labeled-input > textarea:focus + span::before,
+.labeled-input > textarea:focus + span::after {
+    border-top-color: var(--pure-material-safari-helper1) !important;
+    box-shadow: inset 0 1px var(--pure-material-safari-helper1);
+}
+
+
+/* disabled */
+.labeled-input > input:disabled,
+.labeled-input > input:disabled + span,
+.labeled-input > select:disabled,
+.labeled-input > select:disabled + span,
+.labeled-input > textarea:disabled,
+.labeled-input > textarea:disabled + span {
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+    border-top-color: transparent !important;
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    pointer-events: none;
+}
+
+.labeled-input > input:disabled + span::before,
+.labeled-input > input:disabled + span::after,
+.labeled-input > select:disabled + span::before,
+.labeled-input > select:disabled + span::after,
+.labeled-input > textarea:disabled + span::before,
+.labeled-input > textarea:disabled + span::after {
+    border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+}
+
+.labeled-input > input:disabled:placeholder-shown,
+.labeled-input > input:disabled:placeholder-shown + span,
+.labeled-input > select:disabled:placeholder-shown,
+.labeled-input > select:disabled:placeholder-shown + span,
+.labeled-input > textarea:disabled:placeholder-shown,
+.labeled-input > textarea:disabled:placeholder-shown + span {
+    border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+}
+
+.labeled-input > input:disabled:placeholder-shown + span::before,
+.labeled-input > input:disabled:placeholder-shown + span::after,
+.labeled-input > select:disabled:placeholder-shown + span::before,
+.labeled-input > select:disabled:placeholder-shown + span::after,
+.labeled-input > textarea:disabled:placeholder-shown + span::before,
+.labeled-input > textarea:disabled:placeholder-shown + span::after {
+    border-top-color: transparent !important;
+}
+
+
+/* faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .labeled-input > input,
+        .labeled-input > input + span,
+        .labeled-input > select,
+        .labeled-input > select + span,
+        .labeled-input > textarea,
+        .labeled-input > textarea + span,
+        .labeled-input > input + span::before,
+        .labeled-input > input + span::after,
+        .labeled-input > select + span::before,
+        .labeled-input > select + span::after,
+        .labeled-input > textarea + span::before,
+        .labeled-input > textarea + span::after {
+            transition-duration: 0.1s;
+        }
+
+    }
+}
