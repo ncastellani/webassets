@@ -21,6 +21,9 @@
 	-ms-transition: background-color 200ms linear, border-color 200ms linear;
 	transition: background-color 200ms linear, border-color 200ms linear;
 }
+.btn-inline {
+    display: inline-block !important;
+}
 
 
 /* sizes */
@@ -38,7 +41,7 @@
 .btn-primary {
 	background-color: var(--color-primary);
     border-color: var(--color-primary);
-	color: var(--color-default-text);
+	color: var(--color-primary-text) !important;
 }
 .btn-primary:hover,
 .btn-primary:active {
