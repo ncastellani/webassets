@@ -1,6 +1,5 @@
 
 var site = {}; // customer custom preferences
-var modules = {}; // site loaded modules JSON
 var lang = {}; // language translations and preferences
 var pageLang = document.querySelector('meta[name="language"]').content.toLowerCase(); // HTML file language
 
