@@ -55,3 +55,25 @@ function removeActiveFromPrefix(prefix, exceptIDs) {
     }
 
 }
+
+// set an interval to add the .active on a element if exists
+function tryToAddActiveToItem(id) {
+    console.debug(`Utils: registed a intent to add .active [id: ${id}]`);
+
+    let tryCount = 0;
+    let setItemActiveInterval = setInterval(function() {
+        if (tryCount == 10) {
+            clearInterval(setItemActiveInterval);
+            console.debug(`Utils: giving up on adding the .active to element [id: ${id}]`);
+        } else {
+            if (document.getElementById(id)) {
+                document.getElementById(id).classList.add('active');
+                clearInterval(setItemActiveInterval);
+                console.debug(`Utils: sucessfully added the .active to element [id: ${id}]`);
+            } else {
+                tryCount++;
+            }
+        }
+    }, 100);
+
+}
