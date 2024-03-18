@@ -42,3 +42,16 @@ function updateBrowserTheme(color) {
 
     return true;
 }
+
+// remove the .active class from all IDs that has the passed prefix
+function removeActiveFromPrefix(prefix, exceptIDs) {
+    console.debug(`Utils: removing .active from set of elements [prefix: ${prefix}] [except: ${exceptIDs}]`);
+
+    let allItems = document.querySelectorAll('*[id^="' + prefix + '"]');
+    for (i = 0; i < allItems.length; ++i) {
+        if (!contains(exceptIDs, allItems[i].id)) {
+            document.getElementById(allItems[i].id).classList.remove('active');
+        }
+    }
+
+}
