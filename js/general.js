@@ -43,6 +43,13 @@ function updateBrowserTheme(color) {
     return true;
 }
 
+// check if the array contains a value
+function contains(a, obj) {
+    let i = a.length;
+    while (i--) { if (a[i] === obj) { return true; } }
+    return false;
+}
+
 // remove the .active class from all IDs that has the passed prefix
 function removeActiveFromPrefix(prefix, exceptIDs) {
     console.debug(`Utils: removing .active from set of elements [prefix: ${prefix}] [except: ${exceptIDs}]`);
