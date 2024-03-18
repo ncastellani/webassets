@@ -54,6 +54,16 @@ body {
 }
 
 
+/* A tag links */
+a {
+    color: var(--color-primary);
+    text-decoration: none !important;
+}
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+
 /* clearfix */
 .clearfix::after {
     content: "";

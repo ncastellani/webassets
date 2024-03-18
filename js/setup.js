@@ -7,10 +7,13 @@ function initSetup() {
 
     console.info('GlobalSetup: running the global page setup');
 
+    loadingOverlayProgressTotal = (loadingOverlayProgressTotal + 1);
+
     function step1() { updateColorPreferences(step2); }
     function step2() { loadTranslation(pageLang, step3); }
     function step3() { addLoadingProgressMessage(lang.t['loading.messages.searchingUpdates'], false, function() { checkPendingServiceWorkerUpdates(step4); }, 0); }
-    function step4() { addLoadingProgressMessage(lang.t['loading.messages.loadingSiteSettings'], false, function() { loadSitePreferences(finishInit); }, 1000); }
+    function step4() { addLoadingProgressMessage(lang.t['loading.messages.loadingSiteSettings'], false, function() { loadSitePreferences(step5); }, 1000); }
+    function step5() { addLoadingProgressMessage(lang.t['loading.messages.loadingSiteModules'], true, function() { loadSiteModules(finishInit); }, false); }
 
     function finishInit() {
         console.info('GlobalSetup: finished the global setup');
@@ -100,6 +103,19 @@ function loadSitePreferences(cb) {
         site = data;
 
         applySitePreferences(cb);
+    });
+
+}
+
+// load the JSON file with the app modules
+function loadSiteModules(cb) {
+    console.info(`GlobalSetup: loading the modules JSON file...`);
+
+    loadJSONFile('/assets/data/modules.json', function(data) {
+        console.info(`GlobalSetuptup: modules parsed. setting variable`);
+        modules = data;
+
+        cb();
     });
 
 }
