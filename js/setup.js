@@ -7,8 +7,6 @@ function initSetup() {
 
     console.info('GlobalSetup: running the global page setup');
 
-    loadingOverlayProgressTotal = (loadingOverlayProgressTotal + 1);
-
     function step1() { updateColorPreferences(step2); }
     function step2() { loadTranslation(pageLang, step3); }
     function step3() { addLoadingProgressMessage(lang.t['loading.messages.searchingUpdates'], false, function() { checkPendingServiceWorkerUpdates(step4); }, 0); }
