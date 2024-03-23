@@ -127,6 +127,19 @@ function updateBrowserTheme(color) {
     return true;
 }
 
+// get an value in an object tree by dotted notation
+function objectByDottedNotation(obj, is, value) {
+    if (typeof is == 'string') {
+        return objectByDottedNotation(obj, is.split('.'), value);
+    } else if (is.length == 1 && value !== undefined) {
+        return obj[is[0]] = value;
+    } else if (is.length == 0) {
+        return obj;
+    }
+
+    return objectByDottedNotation(obj[is[0]], is.slice(1), value);
+}
+
 // remove the .active class from all IDs that has the passed prefix
 function removeActiveFromPrefix(prefix, exceptIDs) {
     console.debug(`Utils: removing .active from set of elements [prefix: ${prefix}] [except: ${exceptIDs}]`);
