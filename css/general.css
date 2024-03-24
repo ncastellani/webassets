@@ -94,8 +94,8 @@ a:hover {
     .container { width: 80%; }
 }
 @media (min-width: 1280px) {
-    .container { width: 72%; }
+    .container { width: 76%; }
 }
 @media (min-width: 1920px) {
-    .container { width: 64%; }
+    .container { width: 68%; }
 }
