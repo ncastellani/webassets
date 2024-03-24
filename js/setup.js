@@ -8,8 +8,8 @@ function initSetup() {
     console.info('GlobalSetup: running the global page setup');
 
     function step1() { updateColorPreferences(step2); }
-    function step2() { loadTranslation(pageLang, step3); }
-    function step3() { addLoadingProgressMessage(lang.t['loading.messages.searchingUpdates'], false, function() { checkPendingServiceWorkerUpdates(step4); }, 0); }
+    function step2() { loadTranslation(pageLang, step4); }
+    //function step3() { addLoadingProgressMessage(lang.t['loading.messages.searchingUpdates'], false, function() { checkPendingServiceWorkerUpdates(step4); }, 0); }
     function step4() { addLoadingProgressMessage(lang.t['loading.messages.loadingSiteSettings'], false, function() { loadSitePreferences(finishInit); }, 1000); }
 
     function finishInit() {
