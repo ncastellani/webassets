@@ -1,0 +1,97 @@
+
+.actionbar {
+    top: 0;
+    right: 0;
+    margin: 0;
+
+    width: 0;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+
+    transition: 0.5s;
+    z-index: 1;
+
+    border-left: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color) !important;
+}
+.actionbar > div {
+    padding: 50px;
+}
+
+
+/* header */
+.actionbar .header {
+    margin-bottom: 20px;
+}
+.actionbar .header > a > i {
+    float: right;
+    font-size: 32px;
+    color: var(--text-color) !important;
+}
+.actionbar .header > h2 {
+    margin-bottom: 0;
+    font-weight: 400;
+}
+.actionbar .header > p {
+    font-size: 16px;
+}
+
+
+/* buttons */
+.actionbar .buttons {
+    margin-top: 30px;
+}
+
+
+/* fields */
+.actionbar-field-bar {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    opacity: 0.4;
+    border-top: 1px solid var(--sidebar-divisor);
+}
+
+.actionbar-field {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.actionbar-field-border + .actionbar-field-border {
+    border-top: 1px solid var(--border-color);
+}
+
+.actionbar-field:before,
+.actionbar-field:after {
+    display: table;
+    content: " ";
+}
+.actionbar-field:after {
+    clear: both;
+}
+
+.actionbar-field > b {
+    float: left;
+}
+.actionbar-field > span {
+    float: right;
+}
+
+@media (max-width: 1279px) {
+    .actionbar-field > b,
+    .actionbar-field > span {
+        float: initial !important;
+        display: block !important;
+    }
+}
+
+
+/* open state */
+.actionbar-open {
+    width: 500px;
+}
+@media (max-width: 1279px) {
+    .actionbar-open {
+        width: 100%;
+    }
+}
