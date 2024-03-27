@@ -43,7 +43,7 @@ function updateActionBar(kind, btnType, title, desc, body, fields, cb) {
             let v = fields[k];
 
             let fieldID = `actionBarField${v.fieldName}`;
-            formFields.push({ id: fieldID, displayType: v.displayType, required: v.required, name: v.fieldName });
+            formFields.push({ id: fieldID, displayType: v.displayType, inputType: v.inputType, required: v.required, name: v.fieldName });
 
             if (v.displayType == 'select') {
 
